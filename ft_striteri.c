@@ -13,14 +13,12 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	char			*str;
 	unsigned int	i;
 
 	i = 0;
-	str = ft_strdup(s);
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 	{
-		f (i, &str[i]);
+		f(i, &s[i]);
 		i++;
 	}
 }
