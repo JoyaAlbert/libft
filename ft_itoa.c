@@ -6,13 +6,10 @@
 /*   By: ajoya-pi <ajoya-pi@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 13:39:34 by ajoya-pi          #+#    #+#             */
-/*   Updated: 2023/09/27 11:48:37 by ajoya-pi         ###   ########.fr       */
+/*   Updated: 2023/09/27 11:51:32 by ajoya-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-
-#include "libft.h"
-#include <stdio.h>
 
 int	check(int nb)
 {

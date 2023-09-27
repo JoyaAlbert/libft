@@ -6,13 +6,23 @@
 /*   By: ajoya-pi <ajoya-pi@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:01:07 by ajoya-pi          #+#    #+#             */
-/*   Updated: 2023/09/27 11:33:01 by ajoya-pi         ###   ########.fr       */
+/*   Updated: 2023/09/27 15:50:35 by ajoya-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int main()
 {
+	int	i;
+
+	i = 0;
+	char **a = ft_split("hola,buenas,tardes", ',');
+	while (i < 2)
+	{
+		printf("\n%s", a[i]);
+		i++;
+	}
     return (0);
 }
