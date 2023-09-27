@@ -11,12 +11,10 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strndup(const char *s1, int n)
+static char	*ft_strndup(const char *s1, int n)
 {
 	char	*s2;
-	size_t	i;
 
-	i = 0;
 	s2 = (char *)malloc(sizeof(char) * n);
 	if (s2 == NULL)
 		return (NULL);
@@ -24,7 +22,7 @@ char	*ft_strndup(const char *s1, int n)
 	return (s2);
 }
 
-int	countwords(char const *s, char c)
+static int	countwords(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -33,14 +31,15 @@ int	countwords(char const *s, char c)
 	i = 0;
 	while ((char)s[i] != '\0')
 	{
-		if ((char)s[i] == c)
+		if (s[i] == c)
 		{
-			while ((char)s[i] == c)
+			while (s[i] == c)
 				i++;
-			count++;
-			i--;
 		}
-		i++;
+		if (s[i] != '\0')
+			count++;
+		while (s[i] != '\0' && s[i] != c)
+			i++;
 	}
 	return (count);
 }

@@ -26,7 +26,7 @@ size_t			ft_strlen(const char *str);
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t len);
-void			*ft_memmove(void *dest, const void *src, size_t len); //CORE
+void			*ft_memmove(void *dest, const void *src, size_t len);
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 int				ft_toupper(int c);

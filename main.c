@@ -11,18 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int main()
+int	main(void)
 {
-	int	i;
-
-	i = 0;
-	char **a = ft_split("hola,buenas,tardes", ',');
-	while (i < 2)
-	{
-		printf("\n%s", a[i]);
-		i++;
-	}
-    return (0);
+	return (0);
 }

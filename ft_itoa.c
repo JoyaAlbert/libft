@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	check(int nb)
+static int	check(int nb)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ int	check(int nb)
 	return (i + 1);
 }
 
-char	*exceptions(int nb, int i, char *a)
+static char	*exceptions(int nb, int i, char *a)
 {
 	if (nb == 0)
 	{

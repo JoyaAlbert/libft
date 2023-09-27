@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	checkdigits(int nb, int fd)
+static int	checkdigits(int nb, int fd)
 {
 	int	i;
 
