@@ -10,8 +10,7 @@ clean:
 	rm -rf *.o
 fclean:
 	rm -rf $(NAME) *.o
-re: 
-	fclean all
+re: fclean all $(NAME)
 
 .PHONY: 
 	all clean fclean re
