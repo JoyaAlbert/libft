@@ -6,10 +6,11 @@
 /*   By: ajoya-pi <ajoya-pi@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 11:17:00 by ajoya-pi          #+#    #+#             */
-/*   Updated: 2023/09/27 17:11:30 by ajoya-pi         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:33:57 by ajoya-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stdio.h>
 
 static char	*ft_strndup(const char *s1, int n)
 {
@@ -44,18 +45,29 @@ static int	countwords(char const *s, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**freesplits(char **split, int k)
 {
-	int		i;
-	int		j;
-	int		k;
-	char	**split;
+	if (split[k] == NULL)
+	{
+		while (k >= 0)
+		{
+			free(split[k]);
+			k--;
+		}
+		free(split);
+		return (NULL);
+	}
+	return (split);
+}
+
+static char	**fillmatrix(char const *s, char c, char **split)
+{
+	int	i;
+	int	j;
+	int	k;
 
 	i = 0;
 	k = 0;
-	split = (char **)malloc((countwords(s, c) + 1) * sizeof(char *));
-	if (split == NULL)
-		return (NULL);
 	while (s[i] != '\0')
 	{
 		while (s[i] == c)
@@ -66,9 +78,24 @@ char	**ft_split(char const *s, char c)
 		if (i > j)
 		{
 			split[k] = ft_strndup(s + j, i - j + 1);
+			if (freesplits(split, k) == NULL)
+				return (NULL);
 			k++;
 		}
 	}
 	split[k] = NULL;
+	return (split);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**split;
+
+	split = (char **)malloc((countwords(s, c) + 1) * sizeof(char *));
+	if (split == NULL)
+		return (NULL);
+	split = fillmatrix(s, c, split);
+	if (split == NULL)
+		return (NULL);
 	return (split);
 }
