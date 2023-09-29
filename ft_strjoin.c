@@ -13,29 +13,29 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char			*tot;
+	char			*total;
 	unsigned int	i;
-	unsigned int	tam;
-	unsigned int	tam1;
+	unsigned int	size;
+	unsigned int	size1;
 
 	i = 0;
-	tam = ft_strlen(s1);
-	tam1 = ft_strlen(s2);
-	tot = (char *)malloc((tam * sizeof(char)) + (tam1 * sizeof(char)) + 1);
-	if (tot == NULL)
+	size = ft_strlen(s1);
+	size1 = ft_strlen(s2);
+	total = (char *)malloc((size * sizeof(char)) + (size1 * sizeof(char)) + 1);
+	if (total == NULL)
 		return (NULL);
-	while (i < tam)
+	while (i < size)
 	{
-		tot[i] = s1[i];
+		total[i] = s1[i];
 		i++;
 	}
-	tam = 0;
-	while (tam < tam1)
+	size = 0;
+	while (size < size1)
 	{
-		tot[i] = s2[tam];
+		total[i] = s2[size];
 		i++;
-		tam++;
+		size++;
 	}
-	tot[i] = '\0';
-	return (tot);
+	total[i] = '\0';
+	return (total);
 }

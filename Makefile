@@ -1,4 +1,4 @@
-GCC=gcc
+CC=gcc
 CFLAGS= -Wall -Wextra -Werror
 NAME = libft.a
 all: $(NAME)
@@ -10,7 +10,6 @@ clean:
 	rm -rf *.o
 fclean:
 	rm -rf $(NAME) *.o
-
 re: 
 	fclean all
 

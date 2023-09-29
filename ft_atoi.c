@@ -6,7 +6,7 @@
 /*   By: ajoya-pi <ajoya-pi@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 13:58:52 by ajoya-pi          #+#    #+#             */
-/*   Updated: 2023/09/22 14:45:19 by ajoya-pi         ###   ########.fr       */
+/*   Updated: 2023/09/29 11:02:50 by ajoya-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,17 @@ int	ft_atoi(char *str)
 {
 	int	i;
 	int	n;
-	int	signo;
+	int	sign;
 
 	i = 0;
 	n = 0;
-	signo = 1;
+	sign = 1;
 	while (ft_isspace(str[i]) == 1)
 		i++;
 	if (str[i] == '-')
 	{
 		i++;
-		signo = -1;
+		sign = -1;
 	}
 	else if (str[i] == '+')
 		i++;
@@ -47,5 +47,5 @@ int	ft_atoi(char *str)
 		n = n * 10 + (str[i] - '0');
 		i++;
 	}
-	return (signo * n);
+	return (sign * n);
 }
