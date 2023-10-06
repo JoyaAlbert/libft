@@ -6,15 +6,15 @@
 /*   By: ajoya-pi <ajoya-pi@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 13:50:00 by ajoya-pi          #+#    #+#             */
-/*   Updated: 2023/09/22 14:37:01 by ajoya-pi         ###   ########.fr       */
+/*   Updated: 2023/10/06 12:39:19 by ajoya-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 char	*ft_strnstr(const char *hay, const char *needle, size_t len)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
@@ -22,11 +22,11 @@ char	*ft_strnstr(const char *hay, const char *needle, size_t len)
 		return ((char *)hay);
 	else if (len == 0)
 		return (NULL);
-	while (hay[i] != '\0' && ((size_t)i < len))
+	while (hay[i] != '\0' && (i < len))
 	{
 		j = 0;
 		while (hay[i + j] == needle[j] && hay[i + j] != '\0'
-			&& i + j < (int)len)
+			&& i + j < len)
 			j++;
 		if (needle[j] == '\0')
 			return ((char *)hay + i);
