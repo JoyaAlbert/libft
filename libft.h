@@ -3,18 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajoya-pi <ajoya-pi@student.42madrid>       +#+  +:+       +#+        */
+/*   By: joya <joya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 11:27:52 by ajoya-pi          #+#    #+#             */
-/*   Updated: 2023/09/20 15:39:04 by ajoya-pi         ###   ########.fr       */
+/*   Updated: 2024/02/13 15:50:27 by joya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "ft_printf/ft_printf.h"
 # include <string.h>
 # include <ctype.h>
 # include <stdlib.h>
+# include <stdarg.h>
 # include <unistd.h>
 /** PRIMERA PARTE **/
 int				ft_isalpha(int character);
@@ -52,4 +55,15 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+//PRINTF
+int				ft_printf(char const *s, ...);
+int				typeform(char c, va_list args);
+int				ft_putchar(char c);
+int				ft_putstr(char *c);
+int				putstrn(char *str);
+int				ft_putnbr(int nb);
+char			*ft_utoa(unsigned int nb);
+char			*itoax(unsigned int nb, char *base);
+char			*ft_lutoax(unsigned long int nb, char *base);
+char			*ft_address(void *p);
 #endif
